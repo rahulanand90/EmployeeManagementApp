@@ -137,3 +137,11 @@ Department ←→ Employee (bidirectional @OneToMany/@ManyToOne)
 3. **Business logic**: Add to service layer with proper transaction management  
 4. **Validation**: Use existing patterns in entities and service methods
 5. **Testing**: Sample data loads automatically in both environments
+
+## Future Enhancements
+
+### Multi-Tenant Architecture (TODO)
+- **Implement Schema-per-Tenant**: Each client gets separate database schema (client1.employee, client2.employee)
+- **Components needed**: TenantDataSourceRouter, TenantContext, Hibernate multi-tenancy configuration
+- **Benefits**: Good isolation, moderate complexity, cost-effective compared to database-per-tenant
+- **Implementation**: Use Spring Boot's AbstractRoutingDataSource with Hibernate SCHEMA multi-tenancy
